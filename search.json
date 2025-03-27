@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Multiple Languages with Quarto!",
+    "section": "",
+    "text": "This website tests if quarto supports multiple languages.\n\n\nDiese Website testet, ob quarto mehrere Sprachen unterstützt."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Vegetation is recorded by means of so-called “vegetation surveys” on defined sample patches of typically 0.1-400 m2. These contain information on all vascular plant species present and often also mosses and lichens, their proportions and environmental parameters recorded on site. This means that the information content of vegetation surveys is considerably greater and allows more in-depth analyses than observational data on individual species. For example, biodiversity mass or mean ecological indicator values can be determined and their changes in space and time analyzed.\n\n\nVegetation wird mittels sogenannten «Vegetationsaufnahmen» auf definierten Probeflächen von typischerweise 0.1–400 m2 Fläche erfasst. Diese enthalten Informationen zu sämtlichen vorkommenden Gefässpflanzenarten sowie oft auch Moosen und Flechten, ihren Mengenanteilen, sowie vor Ort erhobenen Umweltparametern. Damit ist der Informationsgehalt von Vegetationsaufnahmen erheblich grösser und erlaubt weitergehende Analysen als Beobachtungsdaten von Einzelarten. Zum Beispiel können Biodiversitätsmasse oder mittlere ökologische Zeigerwerteermittelt und ihre Veränderungen in Raum und Zeit analysiert werden."
+  }
+]
