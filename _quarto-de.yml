@@ -3,3 +3,6 @@ project:
   output-dir: docs/de
 
 lang: de
+
+website:
+  title: "Mehrsprachige Websiten mit Quarto!"
