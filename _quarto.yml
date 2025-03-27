@@ -22,9 +22,7 @@ format:
     css: styles.css
     toc: true
 
-
-
 profile:
-  default: english
-  group: [english, german]
+  group: 
+    - [en, de]
 

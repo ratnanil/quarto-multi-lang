@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: 6564bbb5-b7fa-420e-ab4c-6c5ffdda0e02
+      url: https://chimerical-druid-72da1a.netlify.app
