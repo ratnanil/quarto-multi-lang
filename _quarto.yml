@@ -1,0 +1,30 @@
+project:
+  type: website
+
+website:
+  title: "Multiple Languages with Quarto!"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+    right:
+      - href: ../de
+        text: Deutsch
+      - href: ../en
+        text: English
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+
+
+profile:
+  default: english
+  group: [english, german]
+
