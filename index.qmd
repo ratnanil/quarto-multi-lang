@@ -1,13 +1,16 @@
----
-title: "Multiple Languages with Quarto!"
----
 
 :::{.content-visible when-profile="en"}
-**English**: This website tests if quarto supports multiple languages.
+
+## English
+
+This website tests if quarto supports multiple languages.
 :::
 
 
 
 :::{.content-visible when-profile="de"}
-**German**: Diese Website testet, ob quarto mehrere Sprachen unterstützt.
+
+## German
+
+Diese Website testet, ob quarto mehrere Sprachen unterstützt.
 :::

@@ -5,4 +5,10 @@ project:
 lang: en
 
 website:
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: "About"
   title: "Multi-languages Websites with Quarto!"

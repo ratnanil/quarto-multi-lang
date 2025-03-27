@@ -1,18 +1,23 @@
 project:
   type: website
+  post-render: 
+    cp _index.html docs/index.html
+
 
 website:
-  title: "Multiple Languages with Quarto!"
   navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+    tools:
+      - icon: globe
+        menu:
+          - text: English
+            href: ../en
+          - text: German
+            href: ../de
     right:
       - href: ../de
         text: Deutsch
       - href: ../en
-        text: English
+        text: '<span id="btn-en">English</span>'
 
 format:
   html:
