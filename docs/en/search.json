@@ -4,27 +4,41 @@
     "href": "Readme.html",
     "title": "Multi-languages Websites with Quarto!",
     "section": "",
-    "text": "To use multi language support, I make use of quarto profiles.\n\nWe create two profiles: en / de\nEach has its own YAML file: _quarto-en.yml and quarto-de.yml and output-dir (_site/en and _site/de)\nWe specify a default profile using groups\nWe conditionally show content using divs with the .content-visible when-profile=\"en\" syntax\nTo Render, you must specify a profile (e.g. --profile en) and also use the option --no-clean\nTo publish, you cannot use quarto publish anymore, since this is output-dir-aware. Rather, use netlify with the\nIn the root dir, specify a _redirects to direct users to one of the subsites (since the root is empty)"
+    "text": "To use multi language support, I make use of quarto profiles.\nSome ideas are from here.\n\nWe create two profiles: en / de\nEach has its own YAML file: _quarto-en.yml and quarto-de.yml and output-dir (e.g. _site/en and _site/de)\nWe specify a default profile using groups\nWe conditionally show content using divs with the .content-visible when-profile=\"en\" syntax\nTo Render, you must specify a profile (e.g. --profile en) and also use the option --no-clean\nTo publish, you cannot use quarto publish anymore, since this is output-dir-aware. Either:\n\nUse netlify with the netlify-cli or\nuse gh-pages, set the output dir to docs/en and docs/de, and start version controlling these directories\n\nIf you use\n\nNetlify: In the root dir, specify a _redirects to direct users to one of the subsites (since the root is empty)\ngh-pages: create a redirects html pages"
   },
   {
     "objectID": "Readme.html#multilanguage-support-ende",
     "href": "Readme.html#multilanguage-support-ende",
     "title": "Multi-languages Websites with Quarto!",
     "section": "",
-    "text": "To use multi language support, I make use of quarto profiles.\n\nWe create two profiles: en / de\nEach has its own YAML file: _quarto-en.yml and quarto-de.yml and output-dir (_site/en and _site/de)\nWe specify a default profile using groups\nWe conditionally show content using divs with the .content-visible when-profile=\"en\" syntax\nTo Render, you must specify a profile (e.g. --profile en) and also use the option --no-clean\nTo publish, you cannot use quarto publish anymore, since this is output-dir-aware. Rather, use netlify with the\nIn the root dir, specify a _redirects to direct users to one of the subsites (since the root is empty)"
+    "text": "To use multi language support, I make use of quarto profiles.\nSome ideas are from here.\n\nWe create two profiles: en / de\nEach has its own YAML file: _quarto-en.yml and quarto-de.yml and output-dir (e.g. _site/en and _site/de)\nWe specify a default profile using groups\nWe conditionally show content using divs with the .content-visible when-profile=\"en\" syntax\nTo Render, you must specify a profile (e.g. --profile en) and also use the option --no-clean\nTo publish, you cannot use quarto publish anymore, since this is output-dir-aware. Either:\n\nUse netlify with the netlify-cli or\nuse gh-pages, set the output dir to docs/en and docs/de, and start version controlling these directories\n\nIf you use\n\nNetlify: In the root dir, specify a _redirects to direct users to one of the subsites (since the root is empty)\ngh-pages: create a redirects html pages"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Multi-languages Websites with Quarto!",
+    "section": "",
+    "text": "Vegetation is recorded by means of so-called “vegetation surveys” on defined sample patches of typically 0.1-400 m2. These contain information on all vascular plant species present and often also mosses and lichens, their proportions and environmental parameters recorded on site. This means that the information content of vegetation surveys is considerably greater and allows more in-depth analyses than observational data on individual species. For example, biodiversity mass or mean ecological indicator values can be determined and their changes in space and time analyzed."
+  },
+  {
+    "objectID": "about.html#about",
+    "href": "about.html#about",
+    "title": "Multi-languages Websites with Quarto!",
     "section": "",
     "text": "Vegetation is recorded by means of so-called “vegetation surveys” on defined sample patches of typically 0.1-400 m2. These contain information on all vascular plant species present and often also mosses and lichens, their proportions and environmental parameters recorded on site. This means that the information content of vegetation surveys is considerably greater and allows more in-depth analyses than observational data on individual species. For example, biodiversity mass or mean ecological indicator values can be determined and their changes in space and time analyzed."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Multiple Languages with Quarto!",
+    "title": "Multi-languages Websites with Quarto!",
     "section": "",
-    "text": "English: This website tests if quarto supports multiple languages."
+    "text": "This website tests if quarto supports multiple languages."
+  },
+  {
+    "objectID": "index.html#english",
+    "href": "index.html#english",
+    "title": "Multi-languages Websites with Quarto!",
+    "section": "",
+    "text": "This website tests if quarto supports multiple languages."
   }
 ]
