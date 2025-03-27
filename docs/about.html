@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.13">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>readme – Mehrsprachige Websiten mit Quarto!</title>
+<title>about – Multi-languages Websites with Quarto!</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -54,17 +54,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "Keine Treffer",
-    "search-matching-documents-text": "Treffer",
-    "search-copy-link-title": "Link in die Suche kopieren",
-    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
-    "search-more-match-text": "weitere Treffer in diesem Dokument",
-    "search-more-matches-text": "weitere Treffer in diesem Dokument",
-    "search-clear-button-title": "Zurücksetzen",
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Abbrechen",
-    "search-submit-button-title": "Abschicken",
-    "search-label": "Suchen"
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -80,11 +80,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Mehrsprachige Websiten mit Quarto!</span>
+    <span class="navbar-title">Multi-languages Websites with Quarto!</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Suchen"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -94,14 +94,14 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">Infos</span></a>
+    <a class="nav-link active" href="./about.html" aria-current="page"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./../"> 
-<span class="menu-text">🌍 Switch to English</span></a>
+    <a class="nav-link" href="./de"> 
+<span class="menu-text">🌍 Auf Deutsch wechseln</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -116,10 +116,10 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Auf dieser Seite</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#multilanguage-support-ende" id="toc-multilanguage-support-ende" class="nav-link active" data-scroll-target="#multilanguage-support-ende">Multilanguage support (en/de)</a></li>
+  <li><a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a></li>
   </ul>
 </nav>
     </div>
@@ -129,35 +129,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="multilanguage-support-ende" class="level2">
-<h2 class="anchored" data-anchor-id="multilanguage-support-ende">Multilanguage support (en/de)</h2>
-<p>To use multi language support, I make use of <a href="https://quarto.org/docs/projects/profiles.html">quarto profiles</a>.</p>
-<p>Some ideas are from <a href="https://quarto-dev.marioangst.com/en/blog/posts/multi-language-quarto/">here</a>.</p>
-<p>Current approach</p>
-<ol type="1">
-<li>We create two profiles: <code>en</code> / <code>de</code></li>
-<li>Each has its own YAML file: <code>_quarto-en.yml</code> and <code>quarto-de.yml</code>. In these yaml files, the <code>output-dir</code> is specified for each profile<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
-<li>We specify a default profile using <a href="https://quarto.org/docs/projects/profiles.html#profile-groups">groups</a></li>
-<li>We conditionally show content using divs with the <code>.content-visible when-profile="en"</code> syntax</li>
-<li>To Render, you must specify a profile (e.g.&nbsp;<code>--profile en</code>). In the current setup (where <code>en</code> is in the <code>docs</code> root directory and <code>de</code> is in a subdirectory), you need to append <code>--no-clean</code> if <code>en</code> is run <em>after</em> <code>de</code></li>
-<li>To publish, you cannot use <code>quarto publish</code> anymore, since this is <code>output-dir</code>-aware. We could either use netlify with the netlify-cli <em>or</em> use gh-pages and version the <code>output-dir</code>. The latter method is very simple, ableit being not-so-elegant. Netlify would have the big advantage of <code>redirects</code>, see below.</li>
-<li>If you use
-<ul>
-<li>Netlify: In the root dir, specify a <code>_redirects</code> to direct users to one of the subsites (since the root is empty)</li>
-<li>gh-pages: create a redirects html pages</li>
-</ul></li>
-</ol>
+<section id="about" class="level2">
+<h2 class="anchored" data-anchor-id="about">About</h2>
+<p>Vegetation is recorded by means of so-called “vegetation surveys” on defined sample patches of typically 0.1-400 m2. These contain information on all vascular plant species present and often also mosses and lichens, their proportions and environmental parameters recorded on site. This means that the information content of vegetation surveys is considerably greater and allows more in-depth analyses than observational data on individual species. For example, biodiversity mass or mean ecological indicator values can be determined and their changes in space and time analyzed.</p>
 
 
 </section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Fußnoten</h2>
-
-<ol>
-<li id="fn1"><p>Currently, we use github-pages <em>without</em> the <code>gh-pages</code> branch and <em>without</em> <code>quarto publish</code> because these functionalities don’t play well with nested <code>output-dir</code>s. So a simple setup is to use <code>docs</code> as the <code>output-dir</code> of the default language (e.g.&nbsp;english) and <code>docs/de</code> for the secondary langauge (e.g.&nbsp;german).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -201,12 +180,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Kopiert");
+    button.setAttribute("title", "Copied!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Kopiert");
+      button.setAttribute("data-bs-title", "Copied!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
