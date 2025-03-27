@@ -1,23 +1,19 @@
 project:
   type: website
-  post-render: 
-    cp _index.html docs/index.html
+  # post-render: 
+  #   cp _index.html docs/index.html
 
 
-website:
-  navbar:
-    tools:
-      - icon: globe
-        menu:
-          - text: English
-            href: ../en
-          - text: German
-            href: ../de
-    right:
-      - href: ../de
-        text: Deutsch
-      - href: ../en
-        text: '<span id="btn-en">English</span>'
+# website:
+#   navbar:
+    # tools:
+    #   - icon: globe
+    #     menu:
+    #       - text: English
+    #         href: ../en
+    #       - text: German
+    #         href: ../de
+
 
 format:
   html:

@@ -1,11 +1,14 @@
 
 project:
-  output-dir: docs/en
+  output-dir: docs
 
 lang: en
 
 website:
   navbar:
+    right:
+      - href: de
+        text: 🌍 Auf Deutsch wechseln
     left:
       - href: index.qmd
         text: Home

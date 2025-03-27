@@ -6,6 +6,9 @@ lang: de
 
 website:
   navbar:
+    right:
+      - href: ../
+        text: 🌍 Switch to English
     left:
       - href: index.qmd
         text: Home
