@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "Readme.html",
+    "href": "Readme.html",
+    "title": "Mehrsprachige Websiten mit Quarto!",
+    "section": "",
+    "text": "Check out https://ratnanil.github.io/quarto-multi-lang/ for more information."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Mehrsprachige Websiten mit Quarto!",
+    "section": "",
+    "text": "Dieser Text ist auf Deutsch."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Mehrsprachige Websiten mit Quarto!",
@@ -12,26 +26,5 @@
     "title": "Mehrsprachige Websiten mit Quarto!",
     "section": "",
     "text": "Diese Website implementiert quarto mit 2 Sprachen. Derzeit sehen Sie die deutsche Version. Wie das ganze funktioniert ist nur in der englischen Version sichtbar.\n\n\n\n\n\n\nHinweis\n\n\n\nAnything not in a conditional div is displayed in both language versions (like this callout block you are reading right now)"
-  },
-  {
-    "objectID": "Readme.html",
-    "href": "Readme.html",
-    "title": "Mehrsprachige Websiten mit Quarto!",
-    "section": "",
-    "text": "To use multi language support, I make use of quarto profiles.\nSome ideas are from here.\nCurrent approach\n\nWe create two profiles: en / de\nEach has its own YAML file: _quarto-en.yml and quarto-de.yml. In these yaml files, the output-dir is specified for each profile1\nWe specify a default profile using groups\nWe conditionally show content using divs with the .content-visible when-profile=\"en\" syntax\nTo Render, you must specify a profile (e.g. --profile en). In the current setup (where en is in the docs root directory and de is in a subdirectory), you need to append --no-clean if en is run after de\nTo publish, you cannot use quarto publish anymore, since this is output-dir-aware. We could either use netlify with the netlify-cli or use gh-pages and version the output-dir. The latter method is very simple, ableit being not-so-elegant. Netlify would have the big advantage of redirects, see below.\nIf you use\n\nNetlify: In the root dir, specify a _redirects to direct users to one of the subsites (since the root is empty)\ngh-pages: create a redirects html pages"
-  },
-  {
-    "objectID": "Readme.html#multilanguage-support-ende",
-    "href": "Readme.html#multilanguage-support-ende",
-    "title": "Mehrsprachige Websiten mit Quarto!",
-    "section": "",
-    "text": "To use multi language support, I make use of quarto profiles.\nSome ideas are from here.\nCurrent approach\n\nWe create two profiles: en / de\nEach has its own YAML file: _quarto-en.yml and quarto-de.yml. In these yaml files, the output-dir is specified for each profile1\nWe specify a default profile using groups\nWe conditionally show content using divs with the .content-visible when-profile=\"en\" syntax\nTo Render, you must specify a profile (e.g. --profile en). In the current setup (where en is in the docs root directory and de is in a subdirectory), you need to append --no-clean if en is run after de\nTo publish, you cannot use quarto publish anymore, since this is output-dir-aware. We could either use netlify with the netlify-cli or use gh-pages and version the output-dir. The latter method is very simple, ableit being not-so-elegant. Netlify would have the big advantage of redirects, see below.\nIf you use\n\nNetlify: In the root dir, specify a _redirects to direct users to one of the subsites (since the root is empty)\ngh-pages: create a redirects html pages"
-  },
-  {
-    "objectID": "Readme.html#footnotes",
-    "href": "Readme.html#footnotes",
-    "title": "Mehrsprachige Websiten mit Quarto!",
-    "section": "Fußnoten",
-    "text": "Fußnoten\n\n\nCurrently, we use github-pages without the gh-pages branch and without quarto publish because these functionalities don’t play well with nested output-dirs. So a simple setup is to use docs as the output-dir of the default language (e.g. english) and docs/de for the secondary langauge (e.g. german).↩︎"
   }
 ]

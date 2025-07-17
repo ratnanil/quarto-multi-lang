@@ -114,14 +114,8 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Auf dieser Seite</h2>
-   
-  <ul>
-  <li><a href="#multilanguage-support-ende" id="toc-multilanguage-support-ende" class="nav-link active" data-scroll-target="#multilanguage-support-ende">Multilanguage support (en/de)</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
@@ -129,35 +123,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="multilanguage-support-ende" class="level2">
-<h2 class="anchored" data-anchor-id="multilanguage-support-ende">Multilanguage support (en/de)</h2>
-<p>To use multi language support, I make use of <a href="https://quarto.org/docs/projects/profiles.html">quarto profiles</a>.</p>
-<p>Some ideas are from <a href="https://quarto-dev.marioangst.com/en/blog/posts/multi-language-quarto/">here</a>.</p>
-<p>Current approach</p>
-<ol type="1">
-<li>We create two profiles: <code>en</code> / <code>de</code></li>
-<li>Each has its own YAML file: <code>_quarto-en.yml</code> and <code>quarto-de.yml</code>. In these yaml files, the <code>output-dir</code> is specified for each profile<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
-<li>We specify a default profile using <a href="https://quarto.org/docs/projects/profiles.html#profile-groups">groups</a></li>
-<li>We conditionally show content using divs with the <code>.content-visible when-profile="en"</code> syntax</li>
-<li>To Render, you must specify a profile (e.g.&nbsp;<code>--profile en</code>). In the current setup (where <code>en</code> is in the <code>docs</code> root directory and <code>de</code> is in a subdirectory), you need to append <code>--no-clean</code> if <code>en</code> is run <em>after</em> <code>de</code></li>
-<li>To publish, you cannot use <code>quarto publish</code> anymore, since this is <code>output-dir</code>-aware. We could either use netlify with the netlify-cli <em>or</em> use gh-pages and version the <code>output-dir</code>. The latter method is very simple, ableit being not-so-elegant. Netlify would have the big advantage of <code>redirects</code>, see below.</li>
-<li>If you use
-<ul>
-<li>Netlify: In the root dir, specify a <code>_redirects</code> to direct users to one of the subsites (since the root is empty)</li>
-<li>gh-pages: create a redirects html pages</li>
-</ul></li>
-</ol>
+<p>Check out https://ratnanil.github.io/quarto-multi-lang/ for more information.</p>
 
 
-</section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Fußnoten</h2>
-
-<ol>
-<li id="fn1"><p>Currently, we use github-pages <em>without</em> the <code>gh-pages</code> branch and <em>without</em> <code>quarto publish</code> because these functionalities don’t play well with nested <code>output-dir</code>s. So a simple setup is to use <code>docs</code> as the <code>output-dir</code> of the default language (e.g.&nbsp;english) and <code>docs/de</code> for the secondary langauge (e.g.&nbsp;german).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
