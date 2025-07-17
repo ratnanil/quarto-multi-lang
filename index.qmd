@@ -1,5 +1,5 @@
 
-:::{.content-visible when-profile="en"}
+::::{.content-visible when-profile="en"}
 
 ## English
 
@@ -78,13 +78,13 @@ Diese Website implementiert quarto mit 2 Sprachen. Derzeit sehen Sie die deutsch
 
 
 4. **To render**: 
-   - If possible, render the default profile first (`quarto render`) and the other second (` (e.g. `quarto render --profile de`)`)
+   - If possible, render the default profile first (`quarto render`) and the other second (e.g. `quarto render --profile de`)
    - If you need to render the *other* language first, use `--no-clean` (`quarto render --profile de --no-clean`) to prefent `docs` from being purged first
 5. **To publish** 
    - We cannot use `quarto publish`, since this is this command is `output-dir`-aware. Instead, we specify `docs` to be the source for `gh-pages` on GitHub. The disadvantage is that you need to versioncontrol your html-files.
    - *Netlify* would be an elegant solution with some overhead (create an netlify account, install the netlify-cli). Here you have the additional advantage of being able to use `_redirects` depending on the preferred user language in the browser settings.
 
-:::
+::::
 
 
 

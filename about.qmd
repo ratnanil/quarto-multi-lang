@@ -4,6 +4,7 @@
 Here is some english text.
 
 
+:::
 
 :::{.content-visible when-profile="de"}
 
