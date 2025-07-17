@@ -3,39 +3,109 @@
 
 ## English
 
-This website tests if quarto supports multiple languages.
+This website implements quarto with 2 languages. Currently, you are looking at the english version.
+
+To use multi language support, I make use of [quarto profiles](https://quarto.org/docs/projects/profiles.html). Some ideas are from [here](https://quarto-dev.marioangst.com/en/blog/posts/multi-language-quarto/).
+
+Current approach
+
+1. **Create profiles** for each language: `en` / `de`. Each has its own YAML file: `_quarto-en.yml` and `quarto-de.yml`. In these yaml files, specify the language and the menu items for each language:
+
+```{.yaml filename=quarto-en.yml"} 
+lang: en
+
+website:
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: "About"
+  title: "Multi-languages Websites with Quarto!"
+```
+
+```{.yaml filename=quarto-en.yml"} 
+
+website:
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: "Infos"
+  title: "Mehrsprachige Websiten mit Quarto!"
+```
+
+
+2. **Specify a default profile** using [groups](https://quarto.org/docs/projects/profiles.html#profile-groups). The default language is rendered to `docs`, the other language is rendered to a subdir of `docs`. Add a navbar item (right) to switch to the *other* language
+
+
+```{.yaml filename=quarto-en.yml"} 
+project:
+  output-dir: docs
+  
+  
+website:
+  navbar:
+    right:
+      - href: de
+        text: 🌍 Auf Deutsch wechseln
+```
+
+```{.yaml filename=quarto-en.yml"} 
+project:
+  output-dir: docs/de
+  
+website:
+  navbar:
+    right:
+      - href: ../
+        text: 🌍 Switch to English
+```
+
+
+3. **Conditionally show content** on each page using divs with the `.content-visible when-profile="de"` syntax
+
+````{.markdown}
+:::{.content-visible when-profile="de"}
+
+## Deutsch
+
+Diese Website implementiert quarto mit 2 Sprachen. Derzeit sehen Sie die deutsche Version. Wie das ganze funktioniert ist nur in der englischen Version sichtbar.
+
+:::
+````
+
+
+4. **To render**: 
+   - If possible, render the default profile first (`quarto render`) and the other second (` (e.g. `quarto render --profile de`)`)
+   - If you need to render the *other* language first, use `--no-clean` (`quarto render --profile de --no-clean`) to prefent `docs` from being purged first
+5. **To publish** 
+   - We cannot use `quarto publish`, since this is this command is `output-dir`-aware. Instead, we specify `docs` to be the source for `gh-pages` on GitHub. The disadvantage is that you need to versioncontrol your html-files.
+   - *Netlify* would be an elegant solution with some overhead (create an netlify account, install the netlify-cli). Here you have the additional advantage of being able to use `_redirects` depending on the preferred user language in the browser settings.
+
 :::
 
 
 
 :::{.content-visible when-profile="de"}
 
-## German
+## Deutsch
 
-Diese Website testet, ob quarto mehrere Sprachen unterstützt.
+Diese Website implementiert quarto mit 2 Sprachen. Derzeit sehen Sie die deutsche Version. Wie das ganze funktioniert ist nur in der englischen Version sichtbar.
+
 :::
 
 
-How? (in english only):
 
-## Multilanguage support (en/de)
+:::{.callout-note}
 
-To use multi language support, I make use of [quarto profiles](https://quarto.org/docs/projects/profiles.html). 
+Anything not in a conditional div is displayed in both language versions (like this callout block you are reading right now)
 
-Some ideas are from [here](https://quarto-dev.marioangst.com/en/blog/posts/multi-language-quarto/).
 
-Current approach
-
-1. We create two profiles: `en` / `de`
-2. Each has its own YAML file: `_quarto-en.yml` and `quarto-de.yml`. In these yaml files, the `output-dir` is specified for each profile[^1]
-3. We specify a default profile using [groups](https://quarto.org/docs/projects/profiles.html#profile-groups)
-4. We conditionally show content using divs with the `.content-visible when-profile="en"` syntax
-5. To Render, you must specify a profile (e.g. `--profile en`). In the current setup (where `en` is in the `docs` root directory and `de` is in a subdirectory), you need to append `--no-clean` if `en` is run *after* `de`
-6. To publish, you cannot use `quarto publish` anymore, since this is `output-dir`-aware. We could either use netlify with the netlify-cli *or* use gh-pages and version the `output-dir`. The latter method is very simple, ableit being not-so-elegant. Netlify would have the big advantage of `redirects`, see below. 
-7. If you use
-   - Netlify: In the root dir, specify a `_redirects` to direct users to one of the subsites (since the root is empty)
-   - gh-pages: create a redirects html pages
+:::
 
 
 
-[^1]: Currently, we use github-pages *without* the `gh-pages` branch and *without* `quarto publish` because these functionalities don't play well with nested `output-dir`s. So a simple setup is to use `docs` as the `output-dir` of the default language (e.g. english) and `docs/de` for the secondary langauge (e.g. german).
+
+
